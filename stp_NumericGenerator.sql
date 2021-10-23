@@ -15,7 +15,7 @@ BEGIN CATCH
 	END
 END CATCH;
 
--- varian #2
+-- variant #2
 DECLARE @OrderID INT = 1
 WHILE (@OrderID != 1001)
 	BEGIN
