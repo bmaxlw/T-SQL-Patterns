@@ -1,3 +1,4 @@
+-- variant #1
 CREATE PROCEDURE stp_Salary_INS @id INT, @max_id INT AS
 BEGIN TRY
 	BEGIN
@@ -14,5 +15,12 @@ BEGIN CATCH
 	END
 END CATCH;
 
-EXEC stp_Salary_INS 1, 1001;
-DROP PROCEDURE stp_Salary_INS;
+-- varian #2
+DECLARE @OrderID INT = 1
+WHILE (@OrderID != 1001)
+	BEGIN
+		UPDATE Orders SET OrderPrice = ROUND(RAND() * (35000 - 10000) + 10000, 2) 
+		WHERE OrderID = @OrderID;
+		SET @OrderID = @OrderID + 1;
+	END
+
