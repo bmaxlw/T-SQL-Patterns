@@ -1,4 +1,4 @@
--- variant #1
+-- Numeric
 CREATE PROCEDURE stp_Salary_INS @id INT, @max_id INT AS
 BEGIN TRY
 	BEGIN
@@ -24,3 +24,5 @@ WHILE (@OrderID != 1001)
 		SET @OrderID = @OrderID + 1;
 	END
 
+-- String
+SELECT CONVERT(NVARCHAR(10), LEFT(REPLACE(NEWID(), '-', ''), 10));
